@@ -17,7 +17,7 @@ class Projeto:
         return [tarefa for tarefa in self.tarefas if not tarefa.feito]
 
     def procurar(self, descricao):
-        return [Tarefa for tarefa in self.tarefas
+        return [tarefa for tarefa in self.tarefas
                 if tarefa.descricao == descricao][0]
 
     def __str__(self):
@@ -63,7 +63,7 @@ def main():
     casa.add('Passsar roupa', datetime.now())
     casa.add('Lavar prato', datetime.now() + timedelta(days=3, minutes=12))
     casa.tarefas.append(TarefaRecorrente('Trocar lençóis', datetime.now(), 7))
-    casa.tarefas.append(casa.procurar('Trocar lençóis').concluir)
+    casa.tarefas.append(casa.procurar('Trocar lençóis').concluir())
     print(casa)
 
     casa.procurar('Lavar prato').concluir

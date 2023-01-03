@@ -36,7 +36,7 @@ class Projeto:
 
     def procurar(self, descricao):
         try:
-            return [Tarefa for tarefa in self.tarefas
+            return [tarefa for tarefa in self.tarefas
                     if tarefa.descricao == descricao][0]
         except IndexError as e:
             raise TarefaNaoEncontrada(str(e))
@@ -87,6 +87,7 @@ class TarefaRecorrente(Tarefa):
 def main():
     casa = Projeto('Tarefas de casa')
     casa.add('Passsar roupa', datetime.now())
+    casa.add('Lavar prato')
     casa += TarefaRecorrente('Trocar lençóis', datetime.now(), 7)
     casa.procurar('Trocar lençóis').concluir()
     print(casa)
@@ -108,7 +109,7 @@ def main():
     print(mercado)
 
     comprar_carne = mercado.procurar('Carne')
-    comprar_carne.concluir
+    comprar_carne.concluir()
     for tarefa in mercado:
         print(f'- {tarefa}')
     print(mercado)
