@@ -5,7 +5,7 @@ def get_data(compra):
     return compra.data
 
 
-class cliente(Pessoa):
+class Cliente(Pessoa):
     def __init__(self, nome, idade):
         super().__init__(nome, idade)
         self.compras = []
