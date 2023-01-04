@@ -14,7 +14,7 @@ class Humano:
     def idade(self, idade):
         if idade < 0:
             raise ValueError('Idade deve ser um número positivo!')
-            self._idade = idade
+        self._idade = idade
 
     def das_cavernas(self):
         self.especie = 'Homo Neanderthalensis'
