@@ -1,0 +1,4 @@
+para usar o shebang no windows basta no início do código acrescentar esse comando:
+#!python
+no ubuntu:
+#!/usr/bin/python3
