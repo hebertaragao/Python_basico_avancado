@@ -1,6 +1,6 @@
-#!python
+#!python3
 try:
-    from mysql import conncetor
+    from mysql import connector
 except ModuleNotFoundError:
     print('MySQL Connector não instalado!')
 else:
