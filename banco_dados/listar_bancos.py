@@ -4,7 +4,7 @@ conexao = connect(
     host='localhost',
     port=3306,
     user='root',
-    passwd='K@rdec1857'
+    passwd=''
 )
 
 cursor = conexao.cursor()
