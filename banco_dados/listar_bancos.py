@@ -8,7 +8,7 @@ conexao = connect(
 )
 
 cursor = conexao.cursor()
-cursor.execute('SHOW DATABASE')
+cursor.execute('SHOW DATABASES')
 
-for i, database in enumerate(cursor):
-    print(f'Banco de dados {i}:{database[0]}')
+for i, database in enumerate(cursor, start=1):
+    print(f'Banco de dados {i}: {database[0]}')
