@@ -9,7 +9,7 @@ with nova_conexao() as conexao:
         cursor = conexao.cursor()
         cursor.execute(sql, args)
         conexao.commit()
-    except ProcessLookupError as e:
+    except ProgrammingError as e:
         print(f'Erro: {e.msg}')
     else:
         print(f'1 registro incluído, ID: ', cursor.lastrowid)

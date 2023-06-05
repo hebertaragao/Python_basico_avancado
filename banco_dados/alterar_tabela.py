@@ -7,6 +7,6 @@ with nova_conexao() as conexao:
     try:
         cursor = conexao.cursor()
         cursor.execute(sql)
-    except ProcessLookupError as e:
+    except ProgrammingError as e:
         print(f'Erro: {e.msg}')
         

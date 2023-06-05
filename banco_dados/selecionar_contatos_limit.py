@@ -1,16 +1,16 @@
 from mysql.connector.errors import ProgrammingError
 from bd import nova_conexao
 
-sql = 'DELETE FROM contatos WHERE nome = %s'
-args = ('Lucas',)
+sql = 'SELECT * FROM contatos LIMIT 5'
 
 with nova_conexao() as conexao:
     try:
         cursor = conexao.cursor()
-        cursor.execute(sql, args)
-        conexao.commit()
+        cursor.execute(sql)
+        contatos = cursor.fetchall()
     except ProgrammingError as e:
         print(f'Erro: {e.msg}')
     else:
-        print(f'{cursor.rowcount} registro(s) deletados(s).')
-        
+        for contato in contatos:
+            print(f'{contato[2]:4d} - {contato[0]:20s} Telefone: {contato[1]}')
+

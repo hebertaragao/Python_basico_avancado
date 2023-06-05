@@ -8,7 +8,7 @@ with nova_conexao() as conexao:
         cursor = conexao.cursor()
         cursor.execute(sql)
         contatos = cursor.fetchall()
-    except ProcessLookupError as e:
+    except ProgrammingError as e:
         print(f'Erro: {e.msg}')
     else:
         for contato in contatos:
