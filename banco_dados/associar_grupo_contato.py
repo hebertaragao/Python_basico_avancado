@@ -1,7 +1,7 @@
 from mysql.connector.errors import ProgrammingError
 from bd import nova_conexao
 
-selecionar_grupo = 'SELECT id FROM grupos WHERE descricao = %s'
+selecionar_grupo = 'SELECT id FROM grupos WHERE descrição = %s'
 atualizar_contato = 'UPDATE contatos SET grupo_id = %s WHERE nome = %s'
 
 contato_grupo = {

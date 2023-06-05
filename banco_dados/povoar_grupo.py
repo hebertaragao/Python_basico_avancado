@@ -1,7 +1,7 @@
 from mysql.connector.errors import ProgrammingError
 from bd import nova_conexao
 
-sql = 'INSERT INTO grupos (descricao) VALUES (%s)'
+sql = 'INSERT INTO grupos (descrição) VALUES (%s)'
 args = (
         ('Casa',),
         ('Trabalho',),
