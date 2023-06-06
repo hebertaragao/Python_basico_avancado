@@ -6,7 +6,7 @@ sql = """
         grupos.descrição AS grupo,
         contatos.nome As nome
     FROM contatos
-    INNER JOIN grupos ON contatos.grupos_id = grupos.id
+    INNER JOIN grupos ON contatos.grupo_id = grupo_id
     ORDER BY grupo, nome
 """
 
