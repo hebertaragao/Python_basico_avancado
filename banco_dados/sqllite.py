@@ -34,15 +34,15 @@ try:
 
     cursor.executemany(insert_grupos, (('Casa',), ('Trabalho',)))
     cursor.execute(select_grupos)
-    grupos = {Row['descrição']: row['id'] for row in cursor.fetchall()}
+    grupos = {row['descrição']: row['id'] for row in cursor.fetchall()}
 
     contatos = (
         ('Arthur', '456', grupos['Casa']),
         ('Paulo', '789', grupos['Casa']),
-       ('Ângelo', '000', grupos['Trabalho']),
-        ('Eduardo', '987', grupos[None]),
-        ('Yuri', '654', grupos[None]),
-        ('Leonardo', '321', grupos[None]),
+        ('Ângelo', '000', grupos['Trabalho']),
+        ('Eduardo', '987', None),
+        ('Yuri', '654', None),
+        ('Leonardo', '321', None),
     )
     cursor.executemany(insert_contatos, contatos)
 
